@@ -1,0 +1,14 @@
+{% extends 'nailsite/base.html' %}
+{% load static %}
+{% block content %}
+<main>
+  <div class="works">
+    {% for image in nailsite %}
+    <img class="images" src="{{ image.images.url }}" alt="works">
+    {% endfor %}
+</div>
+</main>
+
+
+
+{% endblock %}

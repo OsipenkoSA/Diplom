@@ -1,4 +1,33 @@
+body{
+    max-width: 1600px;
+    height: 1vh;
+}
 .images{
-    width: 300px;
-    height: 200px;
+    flex-grow: 1;
+    width: 15%;
+    height: 250px;
+}
+.logo{
+    width: 50px;
+    height: 50px;
+}
+.navbar{
+    height: 50px;
+    display: flex;
+    margin-bottom: 150px;
+}
+.nav{
+    display: inline-flex;
+    align-items: center;
+}
+.nav li{
+    margin: 20px;
+}
+.work{
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 90%;
+    width: 90%;
+    display: flex;
+    justify-content: center;
 }

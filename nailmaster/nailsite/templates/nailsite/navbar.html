@@ -1,0 +1,16 @@
+{% load static %}
+
+<header>
+    <div class="navbar">
+        <a href="/" class="logo">
+            <img src="{% static 'images/logo.svg' %}" alt="#noHti logo">
+        </a>
+        <ul class="nav">
+                <li><a href="{% url 'nailsite' %}">Галерея работ</a></li>
+                <li><a href="#">Контакты</a></li>
+                <li><a href="#">Календарь</a></li>
+                <li><a href="#">Отзывы</a></li>
+                <li><a href="#">Войти</a></li>
+            </ul>
+    </div>
+</header>
