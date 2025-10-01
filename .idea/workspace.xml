@@ -6,12 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="03b00031-13ae-41f0-a60b-93ccccfa777a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nailmaster/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/nailmaster/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nailmaster/nailmaster/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/nailmaster/nailmaster/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nailmaster/nailsite/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/nailmaster/nailsite/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nailmaster/nailsite/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/nailmaster/nailsite/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nailmaster/nailsite/templates/nailsite/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/nailmaster/nailsite/templates/nailsite/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nailmaster/nailsite/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/nailmaster/nailsite/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nailmaster/nailsite/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/nailmaster/nailsite/static/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
