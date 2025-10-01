@@ -1,9 +1,13 @@
 from django.shortcuts import render, redirect
-from .models import ImageWorks
+from .models import ImageWorks, Services
 
 
 def index(request):
-    return render(request, "nailsite/index.html")
+    services = Services.objects.all()
+    context = {
+        "services": services
+    }
+    return render(request, "nailsite/index.html", context)
 
 
 def nailsite(request):

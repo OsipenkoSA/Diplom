@@ -1,0 +1,9 @@
+#header, .module caption, .module h2, .module caption, .inline-group h2{
+    background: gold;
+}
+a:link, a:visited{
+    color: goldenrod;
+}
+div.breadcrumbs{
+    background: rgb(145, 124, 2);
+}
