@@ -9,7 +9,7 @@
         <h2>Предлагаемые услуги:</h2>
         {% for service in services %}
         <h3 class="services_title">{{ service.title }}</h3>
-        {% if services.images %}
+        {% if service.images %}
         <img src="{{ service.images.url }}" alt="services images" class="services_images">
         {% endif %}
         <p class="services_description">{{ service.description }}</p>

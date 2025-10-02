@@ -1,11 +1,13 @@
-body{
-    max-width: 1600px;
-    min-height: 100vh;
-    background-color: rgb(41, 40, 39);
+*{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    background-image:  url("background.jpg");
+}
+body{
+    max-width: 1600px;
+    min-height: 100vh;
+    background-color: #110011;
+    /* background-image:  url(/static/images/background.jpg) no-repeat; */
 }
 header{
     height: 20%;
@@ -15,6 +17,7 @@ header{
 main{
     height: 80%;
     border: 1px solid blue;
+    margin: 50px;
 }
 
 /* Навигационное меню */
@@ -61,27 +64,73 @@ main{
     background-color: black;
 }
 
+/* Index */
+
+h1{
+    color: #DAA520;
+    margin-bottom: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.services{
+    display: flexbox;
+    /* margin-left: 50px; */
+    justify-content: center;
+    align-items: center;
+}
+.services h2{
+    color: darkgoldenrod;
+    margin-bottom: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 25px;
+}
+.services_description{
+    color: #DAA520;
+    margin-bottom: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+}
+.services_title{
+    color: rgb(255, 183, 0);
+    margin-bottom: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+}
+.services_images{
+    width: 500px;
+    height: 300px;
+    float: right;
+    margin: 20px;
+}
+
+
 /* Галерея работ */
 
-/* .works {
+.works {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 5px;
 }
 
 .images {
+    max-width: 300px;
+    width: auto;
+    height: auto;
     flex-grow: 1;
     flex-shrink: 1;
     flex-basis: auto;
-    } */
+    border: 2px solid;
+    border-radius: 8px;
+    }
 
-.works{
+/* .works{
     display: grid;
     grid-template-columns: repeat(auto-fit, 145px);
     grid-auto-rows: auto;
     grid-auto-flow: dense;
     transition: grid-auto-flow 0.3s ease-in-out;
     gap: 10px;
+    
 }
 
 .images {
@@ -95,7 +144,7 @@ main{
 .works .images {
   grid-column: span 2 / auto;
   grid-row: span 2 / auto;
-}
+} */
 
 /* .gallery .h2 {
   grid-row: span 2 / auto;
