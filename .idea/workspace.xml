@@ -8,8 +8,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nailmaster/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/nailmaster/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nailmaster/nailsite/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/nailmaster/nailsite/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nailmaster/nailsite/templates/nailsite/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/nailmaster/nailsite/templates/nailsite/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nailmaster/nailsite/static/images/logo.svg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/nailmaster/nailsite/templates/nailsite/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/nailmaster/nailsite/templates/nailsite/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nailmaster/nailsite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/nailmaster/nailsite/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nailmaster/nailsite/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/nailmaster/nailsite/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +55,7 @@
       <recent name="C:\Diplom\nailmaster\nailsite\static\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Diplom\nailmaster\nailsite\static\images" />
       <recent name="C:\Diplom\nailmaster\templates\admin" />
       <recent name="C:\Diplom\nailmaster\nailsite" />
     </key>

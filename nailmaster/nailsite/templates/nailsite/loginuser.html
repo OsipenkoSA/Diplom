@@ -1,0 +1,15 @@
+{% extends 'nailsite/base.html' %}
+
+{% block content %}
+<h1 class="login_title">Авторизация:</h1>
+
+<h3 class="error">{{ error }}</h3>
+
+<form method="post" class="login">
+  {% csrf_token %}
+  {{ form }}
+  <button class="btn">Войти</button>
+</form>
+
+
+{% endblock %}
