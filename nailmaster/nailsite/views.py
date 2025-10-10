@@ -3,6 +3,7 @@ from .models import ImageWorks, Services
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 
 
 def index(request):
@@ -32,3 +33,10 @@ def login_user(request):
         else:
             login(request, user)
             return redirect('index')
+
+
+@login_required
+def logout_user(request):
+    if request.method == "POST":
+        logout(request)
+        return redirect('index')

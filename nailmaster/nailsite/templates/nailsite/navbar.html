@@ -6,12 +6,24 @@
             <img src="{% static 'images/logo.svg' %}" alt="#noHti logo">
         </a>
         <ul class="nav">
+            {% if user.is_authenticated %}
                 <li><a href="{% url 'index' %}" class="menu_button">Услуги</a></li>
                 <li><a href="{% url 'nailsite' %}" class="menu_button">Галерея работ</a></li>
                 <li><a href="#" class="menu_button">Контакты</a></li>
                 <li><a href="#" class="menu_button">Календарь</a></li>
                 <li><a href="#" class="menu_button">Отзывы</a></li>
+                <li>
+                    <form action="{% url 'logoutuser' %}" method="post" class="log_button">
+                        {% csrf_token %}
+                        <button class="log_button">Выйти</button>
+                    </form>
+                </li>
+            {% else %}
+                <li><a href="{% url 'index' %}" class="menu_button">Услуги</a></li>
+                <li><a href="{% url 'nailsite' %}" class="menu_button">Галерея работ</a></li>
+                <li><a href="#" class="menu_button">Контакты</a></li>
                 <li><a href="{% url 'loginuser' %}" class="log_button">Войти</a></li>
+            {% endif %}
             </ul>
     </div>
 </header>
