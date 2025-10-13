@@ -187,3 +187,22 @@ h1{
 /* .gallery .h2 {
   grid-row: span 2 / auto;
 } */
+
+/* Отзывы */
+.reviews{
+    border: 1px solid white;
+    width: 300px;
+    height: 300px;
+}
+.reviews p{
+    color: white;
+    font-size: 18px;
+    padding-bottom: 10px;
+}
+.reviews h3{
+    color: whitesmoke;
+    font-size: 20px;
+    padding-bottom: 5px;
+
+
+}

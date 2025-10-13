@@ -1,9 +1,11 @@
 from django.shortcuts import render, redirect
-from .models import ImageWorks, Services
+from .models import ImageWorks, Services, Review
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+from .forms import ReviewForm
+from django.contrib import messages
 
 
 def index(request):
@@ -40,3 +42,19 @@ def logout_user(request):
     if request.method == "POST":
         logout(request)
         return redirect('index')
+
+
+def review_user(request):
+    reviews = Review.objects.all()
+    form = ReviewForm()
+
+    if request.method == "POST":
+        form = ReviewForm(request.POST)
+        review = form.save(commit=False)
+        review.owner = request.user
+        review.save()
+        messages.success(request, "Вы оставили сой отзыв! Спасибо!")
+        return redirect('review')
+
+    return render(request, 'nailsite/review.html', {'form': form, 'reviews': reviews})
+

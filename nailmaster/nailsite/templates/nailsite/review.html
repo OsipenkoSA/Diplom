@@ -1,0 +1,35 @@
+{% extends 'nailsite/base.html' %}
+
+{% block content %}
+<h2>Отзывы</h2>
+
+{% if request.user.id in review %}
+<p>Вы уже оставили свой отзыв!</p>
+{% elif request.user.is_authenticated %}
+<div class="review_form">
+    <form action="{% url 'review' %}" method="post">
+        {% csrf_token %}
+        {% for field in form %}
+        <label>
+            {{ field.label }}:
+            {{ field }}
+        </label>
+        {% endfor %}
+        <input type="submit" value="Оставить отзыв">
+    </form>
+{% else %}
+    <a href="{% url 'loginuser' %}">Пожалуйста авторизуйтесь, чтобы оставить отзыв</a>
+</div>
+{% endif %}
+
+<div class="reviews">
+{% for rev in reviews  %}
+    <h3>{{rev.owner.first_name}}:</h3>
+    <p>{{ rev.body|linebreaksbr }}</p>
+    <p>{{ rev.created }}</p>
+{% endfor %}
+</div>
+
+
+
+{% endblock %}

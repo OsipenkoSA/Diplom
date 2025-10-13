@@ -6,4 +6,5 @@ urlpatterns = [
     path('nailsite/', views.nailsite, name='nailsite'),
     path('login/', views.login_user, name='loginuser'),
     path('logout/', views.logout_user, name='logoutuser'),
+    path('review/', views.review_user, name='review'),
 ]
