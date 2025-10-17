@@ -10,7 +10,7 @@
                 <li><a href="{% url 'index' %}" class="menu_button">Услуги</a></li>
                 <li><a href="{% url 'nailsite' %}" class="menu_button">Галерея работ</a></li>
                 <li><a href="#" class="menu_button">Контакты</a></li>
-                <li><a href="#" class="menu_button">Календарь</a></li>
+                <li><a href="{% url 'calendar' %}" class="menu_button">Календарь</a></li>
                 <li><a href="{% url 'review' %}" class="menu_button">Отзывы</a></li>
                 <li>
                     <form action="{% url 'logoutuser' %}" method="post" class="log_button">

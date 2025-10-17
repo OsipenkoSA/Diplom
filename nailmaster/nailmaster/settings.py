@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'nailsite.apps.NailsiteConfig',
+    'work_calendar.apps.WorkCalendarConfig',
 ]
 
 MIDDLEWARE = [

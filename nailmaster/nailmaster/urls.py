@@ -22,6 +22,7 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('nailsite.urls')),
+    path('work_calendar/', include('work_calendar.urls')),
 ]
 
 if settings.DEBUG:
