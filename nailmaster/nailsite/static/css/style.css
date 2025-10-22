@@ -195,12 +195,12 @@ h1{
     height: 300px;
 }
 .reviews p{
-    color: white;
+    /* color: white; */
     font-size: 18px;
     padding-bottom: 10px;
 }
 .reviews h3{
-    color: whitesmoke;
+    /* color: whitesmoke; */
     font-size: 20px;
     padding-bottom: 5px;
 }
