@@ -4,15 +4,18 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
-from .forms import ReviewForm
+from .forms import ReviewForm, TelebotForm
 from django.contrib import messages
 from django.core.paginator import Paginator
+from telebot.sendmessage import send_telegram
 
 
 def index(request):
     services = Services.objects.all()
+    form = TelebotForm()
     context = {
-        "services": services
+        "services": services,
+        "form": form
     }
     return render(request, "nailsite/index.html", context)
 
@@ -82,4 +85,14 @@ def review_user(request):
     context.update({'reviews': page_obj})
 
     return render(request, 'nailsite/review.html', context)
+
+
+def thanks_page(request):
+    if request.POST:
+        name = request.POST['name']
+        phone = request.POST['phone']
+        send_telegram(tg_name=name, tg_phone=phone)
+        return render(request, 'nailsite/thanks.html', {'name': name})
+    else:
+        return render(request, 'nailsite/thanks.html')
 

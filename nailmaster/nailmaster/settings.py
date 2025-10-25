@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'nailsite.apps.NailsiteConfig',
     'work_calendar.apps.WorkCalendarConfig',
+    'telebot.apps.TelebotConfig',
 ]
 
 MIDDLEWARE = [
