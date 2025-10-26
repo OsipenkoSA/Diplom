@@ -55,13 +55,13 @@ def login_user(request):
             return redirect('index')
 
 
-@login_required
 def logout_user(request):
     if request.method == "POST":
         logout(request)
         return redirect('index')
 
 
+@login_required(login_url="loginuser")
 def review_user(request):
     reviews = Review.objects.all()
     form = ReviewForm()
