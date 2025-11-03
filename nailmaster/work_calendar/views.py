@@ -5,12 +5,14 @@ from django.views import generic
 from django.urls import reverse
 from django.utils.safestring import mark_safe
 import calendar
+import locale
 
 from .models import *
 from .utils import Calendar
 
 
 class CalendarView(generic.ListView):
+    locale.setlocale(locale.LC_ALL, 'ru_RU.UTF-8')
     model = Event
     template_name = 'work_calendar/calendar.html'
 
@@ -47,11 +49,11 @@ def next_month(d):
     return month
 
 
-def event(request, pk):
-    instance = Event()
-    if pk:
-        instance = get_object_or_404(Event, pk=id)
-    else:
-        instance = Event()
-
-    return render(request, 'work_calendar/event.html')
+# def event(request, pk):
+#     instance = Event.objects.get(id=pk)
+#     if pk:
+#         instance = get_object_or_404(Event, pk=id)
+#     else:
+#         instance = Event()
+#
+#     return render(request, 'work_calendar/event.html')

@@ -1,14 +1,18 @@
 {% extends 'nailsite/base.html' %}
 
-<h1 class="title">Календарь записей</h1>
-<hr>
+
 
 
 {% block content %}
+<h1 class="title">Календарь записей</h1>
+<hr>
+
 <div class="clearfix">
-	<a class="btn btn-info left" href="{% url 'calendar' %}?{{ prev_month }}"> Previous Month </a>
-	<a class="btn btn-info right" href="{% url 'calendar' %}?{{ next_month }}"> Next Month </a>
+	<a class="btn btn-info left" href="{% url 'calendar' %}?{{ prev_month }}">Предыдущий месяц</a>
+	<a class="btn btn-info right" href="{% url 'calendar' %}?{{ next_month }}">Следующий месяц</a>
 </div>
 
 {{ calendar }}
 {% endblock %}
+
+<li style="color: green"></li>
