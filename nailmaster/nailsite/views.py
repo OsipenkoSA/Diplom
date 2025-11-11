@@ -96,3 +96,7 @@ def thanks_page(request):
     else:
         return render(request, 'nailsite/thanks.html')
 
+
+def about(request):
+    return render(request, 'nailsite/about.html', {'about': about})
+

@@ -1,0 +1,21 @@
+{% extends 'nailsite/base.html' %}
+{% load static %}
+{% block content %}
+<div>
+    <h1>#ноХти Контакты</h1>
+    <h2>Мастер ногтевого сервиса Вахбиева Сабрина</h2>
+    <h2>Телефон:</h2>
+    <h3>+79284426999</h3>
+    <h2>Адрес:</h2>
+    <h3>г.Геленджик, ул.Маршала Жукова, д.1, корпус 4, цокольный этаж</h3>
+    <div class="map">
+        <h2>На карте:</h2>
+        <img src="{% static 'images/map.jpg' %}" alt="map">
+        <img src="{% static 'images/panorama.jpg' %}" alt="panorama">
+    </div>
+
+</div>
+
+
+
+{% endblock %}

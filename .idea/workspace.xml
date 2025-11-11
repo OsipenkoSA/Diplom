@@ -6,11 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="03b00031-13ae-41f0-a60b-93ccccfa777a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nailmaster/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/nailmaster/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nailmaster/work_calendar/templates/work_calendar/calendar.html" beforeDir="false" afterPath="$PROJECT_DIR$/nailmaster/work_calendar/templates/work_calendar/calendar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nailmaster/work_calendar/templates/work_calendar/event.html" beforeDir="false" afterPath="$PROJECT_DIR$/nailmaster/work_calendar/templates/work_calendar/event.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nailmaster/work_calendar/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/nailmaster/work_calendar/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nailmaster/work_calendar/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/nailmaster/work_calendar/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nailmaster/nailsite/templates/nailsite/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/nailmaster/nailsite/templates/nailsite/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nailmaster/nailsite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/nailmaster/nailsite/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nailmaster/nailsite/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/nailmaster/nailsite/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
