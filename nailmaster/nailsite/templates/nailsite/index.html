@@ -32,13 +32,15 @@
 <section>
         <div class="services">
         <h2>Предлагаемые услуги:</h2>
-        {% for service in services %}
-        <h3 class="services_title">{{ service.title }}</h3>
-        {% if service.images %}
-        <img src="{{ service.images.url }}" alt="services images" class="services_images">
-        {% endif %}
-        <p class="services_description">{{ service.description }}</p>
-        {% endfor %}
+		{% for service in services %}
+			<div class="services-div">
+				<h3 class="services_title">{{ service.title }}</h3>
+				{% if service.images %}
+				<img src="{{ service.images.url }}" alt="services images" class="services_images">
+				{% endif %}
+				<p class="services_description">{{ service.description }}</p>
+			</div>
+		{% endfor %}
     </div>
 
 </section>
