@@ -1,30 +1,39 @@
 {% load static %}
 
 <header>
-    <div class="navbar">
-        <a href="/" class="logo">
-            <img src="{% static 'images/logo.svg' %}" alt="#noHti logo">
-        </a>
-        <ul class="nav">
-            {% if user.is_authenticated %}
-                <li><a href="{% url 'index' %}" class="menu_button">Услуги</a></li>
-                <li><a href="{% url 'nailsite' %}" class="menu_button">Галерея работ</a></li>
-                <li><a href="{% url 'about' %}" class="menu_button">Контакты</a></li>
-                <li><a href="{% url 'calendar' %}" class="menu_button">Календарь</a></li>
-                <li><a href="{% url 'review' %}" class="menu_button">Отзывы</a></li>
-                <li>
-                    <form action="{% url 'logoutuser' %}" method="post" class="log_button">
-                        {% csrf_token %}
-                        <button class="log_button">Выйти</button>
-                    </form>
-                </li>
-            {% else %}
-                <li><a href="{% url 'index' %}" class="menu_button">Услуги</a></li>
-                <li><a href="{% url 'nailsite' %}" class="menu_button">Галерея работ</a></li>
-                <li><a href="{% url 'about' %}" class="menu_button">Контакты</a></li>
-                <li><a href="{% url 'review' %}" class="menu_button">Отзывы</a></li>
-                <li><a href="{% url 'loginuser' %}" class="log_button">Войти</a></li>
-            {% endif %}
-            </ul>
+  <div class="container">
+    <div class="row">
+      <ul class="nav nav-pills nav-justified">
+        <li class="nav-item nav-a">
+          <a class="nav-a" href="{% url 'index' %}">Услуги</a>
+        </li>
+        <li class="nav-item nav-a">
+          <a class="nav-a" href="{% url 'nailsite' %}">Галерея</a>
+        </li>
+        <li class="nav-item nav-a">
+          <a class="nav-a" href="{% url 'about' %}">Контакты</a>
+        </li>
+        <li class="nav-item nav-a">
+          <a class="nav-a" href="{% url 'review' %}">Отзывы</a>
+        </li>
+        {% if user.is_authenticated %}
+
+        <li class="nav-item nav-a">
+          <a class="nav-a" href="{% url 'calendar' %}">Календарь</a>
+        </li>
+        <li class="nav-item nav-a">
+          <form action="{% url 'logoutuser' %}" method="post">
+            {% csrf_token %}
+            <button class="nav-a btn-a">Выйти</button>
+          </form>
+        </li>
+
+        {% else %}
+        <li class="nav-item nav-a">
+          <a class="nav-a" href="{% url 'loginuser' %}">Войти</a>
+        </li>
+        {% endif %}
+      </ul>
     </div>
+  </div>
 </header>
