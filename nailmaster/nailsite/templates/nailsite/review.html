@@ -1,34 +1,39 @@
 {% extends 'nailsite/base.html' %}
 
 {% block content %}
-<h2>Отзывы</h2>
-
-{% if request.user.id in review %}
-<p>Вы уже оставили свой отзыв!</p>
-{% elif request.user.is_authenticated %}
-<div class="review_form">
-    <form action="{% url 'review' %}" method="post">
-        {% csrf_token %}
-        {% for field in form %}
-        <label>
-            {{ field.label }}:
-            {{ field }}
-        </label>
-        {% endfor %}
-        <input type="submit" value="Оставить отзыв">
-    </form>
-{% else %}
-    <a href="{% url 'loginuser' %}">Пожалуйста авторизуйтесь, чтобы оставить отзыв</a>
+<section>
+<div class="cotainer">
+    <div class="row justify-content-center gy-5">
+        <h2>Отзывы</h2>
+        {% if request.user.is_authenticated %}
+        <form action="{% url 'review' %}" method="post">
+            {% csrf_token %}
+            {% for field in form %}
+            <label for="exampleFormControlTextarea1" class="form-label">
+                {{ field.label }}:
+                {{ field }}
+            </label>
+            {% endfor %}
+            <input type="submit" class="btn btn-warning" value="Оставить отзыв">
+        </form>
+        {% else %}
+        <a href="{% url 'loginuser' %}">Пожалуйста авторизуйтесь, чтобы оставить отзыв</a>
+        {% endif %}
+    </div>
 </div>
-{% endif %}
+</section>
 
-<div class="reviews">
-{% for rev in reviews  %}
-    <h3>{{rev.owner.first_name}}:</h3>
-    <p>{{ rev.body|linebreaksbr }}</p>
-    <p>{{ rev.created }}</p>
-{% endfor %}
-</div>
+<section>
+    <div class="container">
+        <div class="row gy-5">
+            {% for rev in reviews  %}
+                <h4>{{rev.owner.first_name}} ({{ rev.created }}):</h4>
+                <p>{{ rev.body|linebreaksbr }}</p>
+                <p></p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
 
 {% if reviews %}
 <nav aria-label="Page navigation example">

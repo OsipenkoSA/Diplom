@@ -12,7 +12,7 @@ def send_telegram(tg_name, tg_phone):
 
     if text.find("{") and text.find("}") and text.rfind("{"):
         part_1 = text[:text.find("{")]
-        part_2 = text[:text.find("}") + 1: text.rfind("{")]
+        part_2 = text[text.find("}") + 1:text.rfind("{")]
         text_slice = part_1 + tg_name + part_2 + tg_phone
     else:
         text_slice = text

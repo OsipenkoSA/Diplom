@@ -29,6 +29,3 @@ class Review(models.Model):
 
     def __str__(self):
         return self.created
-
-    class Meta:
-        unique_together = [['owner',]]

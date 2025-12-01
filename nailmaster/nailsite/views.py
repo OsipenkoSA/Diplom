@@ -2,8 +2,6 @@ from django.shortcuts import render, redirect
 from .models import ImageWorks, Services, Review
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, logout, authenticate
-from django.contrib.auth.models import User
-from django.contrib.auth.decorators import login_required
 from .forms import ReviewForm, TelebotForm
 from django.contrib import messages
 from django.core.paginator import Paginator
@@ -29,15 +27,6 @@ def nailsite(request):
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     context.update({'nailsite': page_obj})
-
-    # left_index = int('page') - 4
-    # if left_index < 1:
-    #     left_index = 1
-    # right_index = int('page') + 5
-    # if right_index > paginator.num_pages:
-    #     right_index = paginator.num_pages + 1
-    # custom_range = range(left_index, right_index)
-    # context['custom_range'] = custom_range
 
     return render(request, "nailsite/work-gallery.html", context)
 

@@ -7,7 +7,7 @@
   		<div class="container class_form">
   			<h1 class="text-3">Оставь заявку</h1>
   			<div class="row justify-content-center gy-5">
-				<form action="{% url 'thanks_page' %}" method="post" style="width: 30%;">
+				<form action="{% url 'thanks_page' %}" method="POST" style="width: 30%;">
 					  {% csrf_token %}
 					  <div class="form-group row">
 							<label for="inputEmail3" class="col-sm-2 col-form-label">Имя</label><br>
