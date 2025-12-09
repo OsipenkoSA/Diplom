@@ -1,15 +1,24 @@
 {% extends 'nailsite/base.html' %}
 
 {% block content %}
-<h1 class="login_title">Авторизация:</h1>
+<section>
+  <div class="container">
+    <div class="row">
+      <h1 class="col-12">Авторизация:</h1>
 
-<h3 class="error">{{ error }}</h3>
+      <h3 class="error">{{ error }}</h3>
 
-<form method="post" class="login">
-  {% csrf_token %}
-  {{ form }}
-  <button class="btn">Войти</button>
-</form>
+      <form method="post" class="login">
+        {% csrf_token %}
+        {{ form }}
+        <button class="nav-a btn-a">Войти</button>
+      </form>
+    </div>
+
+  </div>
+
+</section>
+
 
 
 {% endblock %}

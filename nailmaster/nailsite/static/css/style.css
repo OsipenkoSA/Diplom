@@ -58,10 +58,7 @@ main{
     list-style: none;
     gap: 20px;
 }
-/* .nav li{
-    list-style-type: none;
-    box-sizing: border-box;
-} */
+
 .menu_button{
     text-decoration: none;
     font-size: 20px;
@@ -94,7 +91,7 @@ main{
 
 /* Index */
 
-h1{
+h2{
     color: #DAA520;
     margin-bottom: 50px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -166,6 +163,7 @@ h1{
     color: black;
     border-radius: 8px;
     cursor: pointer;
+    align-items: center;
 } 
 
 /* Галерея работ */
@@ -184,36 +182,11 @@ h1{
     flex-grow: 1;
     flex-shrink: 1;
     flex-basis: auto;
-    border: 2px solid;
+    border: 2px solid #DAA520;
     border-radius: 8px;
     }
 
-/* .works{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, 145px);
-    grid-auto-rows: auto;
-    grid-auto-flow: dense;
-    transition: grid-auto-flow 0.3s ease-in-out;
-    gap: 10px;
-    
-}
 
-.images {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border: 2px solid;
-  border-radius: 8px;
-}
-
-.works .images {
-  grid-column: span 2 / auto;
-  grid-row: span 2 / auto;
-} */
-
-/* .gallery .h2 {
-  grid-row: span 2 / auto;
-} */
 
 /* Отзывы */
 .reviews{
@@ -246,9 +219,13 @@ h1{
 .btn {
   outline: none;
   color: black;
-  background-color: transparent;
+  background-color: #DAA520;
+  border: #DAA520;
   box-shadow: 0 0 0 0;
   margin-right: 3px;
+}
+.btn:hover{
+  background-color: rgb(87, 63, 3);
 }
 
 .clearfix {
@@ -261,7 +238,7 @@ h1{
 
 .form input, .form select, .form textarea {
   border-radius: 5px;
-  border: 1px solid #17a2b8;
+  border: 1px solid #DAA520;
   outline: none;
   background: none;
   padding: 5px;
@@ -315,4 +292,12 @@ a {
 
 .map img{
   margin-bottom: 10px;
+}
+/* ================= */
+.color{
+  color: #DAA520;
+}
+.bottom{
+  border-bottom: 1px solid #DAA520;
+  margin: 10px;
 }

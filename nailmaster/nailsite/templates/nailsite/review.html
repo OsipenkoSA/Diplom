@@ -2,19 +2,19 @@
 
 {% block content %}
 <section>
-<div class="cotainer">
+<div class="container">
     <div class="row justify-content-center gy-5">
         <h2>Отзывы</h2>
         {% if request.user.is_authenticated %}
-        <form action="{% url 'review' %}" method="post">
+        <form class="bottom" action="{% url 'review' %}" method="post">
             {% csrf_token %}
             {% for field in form %}
-            <label for="exampleFormControlTextarea1" class="form-label">
+            <label for="exampleFormControlTextarea1" class="form-label color">
                 {{ field.label }}:
                 {{ field }}
             </label>
             {% endfor %}
-            <input type="submit" class="btn btn-warning" value="Оставить отзыв">
+            <input type="submit" class="nav-a btn-a" style="width: 350px; margin: 10px;" value="Оставить отзыв">
         </form>
         {% else %}
         <a href="{% url 'loginuser' %}">Пожалуйста авторизуйтесь, чтобы оставить отзыв</a>
@@ -27,9 +27,8 @@
     <div class="container">
         <div class="row gy-5">
             {% for rev in reviews  %}
-                <h4>{{rev.owner.first_name}} ({{ rev.created }}):</h4>
-                <p>{{ rev.body|linebreaksbr }}</p>
-                <p></p>
+                <h4 class="color">{{rev.owner.first_name}} ({{ rev.created }}):</h4>
+                <p class="color bottom">{{ rev.body|linebreaksbr }}</p>
             {% endfor %}
         </div>
     </div>

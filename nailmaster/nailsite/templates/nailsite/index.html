@@ -4,25 +4,25 @@
 
 <main>
 	<section>
-  		<div class="container class_form">
-  			<h1 class="text-3">Оставь заявку</h1>
+  		<div class="container class_form bottom">
+  			<h2 style="color: #DAA520;">Оставь заявку:</h2>
   			<div class="row justify-content-center gy-5">
 				<form action="{% url 'thanks_page' %}" method="POST" style="width: 30%;">
 					  {% csrf_token %}
 					  <div class="form-group row">
-							<label for="inputEmail3" class="col-sm-2 col-form-label">Имя</label><br>
+							<label for="inputEmail3" class="col-sm-2 col-form-label" style="color: #DAA520;">Имя</label><br>
 							  {{ form.name }}
 							<div class="">
 							</div>
 					  </div>
 					  <div style="margin-bottom: 5px;" class="form-group row">
-							<label for="inputEmail3" class="col-sm-2 col-form-label">Телефон</label><br>
+							<label for="inputEmail3" class="col-sm-2 col-form-label" style="color: #DAA520;">Телефон</label><br>
 							  {{ form.phone }}
 							<div class="">
 						</div>
 					  </div>
-					  <div style="float: right;" class="form-group row">
-						  <button type="submit" class="btn btn-warning">ОСТАВИТЬ ЗАЯВКУ</button>
+					  <div style="float: right; margin: 10px;" class="form-group row">
+						  <button type="submit" class="nav-a btn-a">ОСТАВИТЬ ЗАЯВКУ</button>
 					  </div>
 				</form>
 			</div>
@@ -31,9 +31,9 @@
 <section>
         <div class="container">
 			<div class="row gy-5">
-				<h2>Предлагаемые услуги:</h2>
+				<h2 style="color: #DAA520;">Предлагаемые услуги:</h2>
 				{% for service in services %}
-				<div class="col-12">
+				<div class="col-12 bottom">
 					<h3 class="services_title">{{ service.title }}</h3>
 					{% if service.images %}
 					<img src="{{ service.images.url }}" alt="services images" class="services_images">
