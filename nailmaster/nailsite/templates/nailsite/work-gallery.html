@@ -1,10 +1,43 @@
 {% extends 'nailsite/base.html' %}
 {% load static %}
 {% block content %}
+
+<!-- Модальное окно -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+      </div>
+      <div class="modal-body">
+       <div id="carouselExample" class="carousel slide">
+          <div class="carousel-inner">
+            {% for slide in nailsite %}
+            <div class="carousel-item {% if forloop.first %} active {% endif %}">
+              {% if slide.images %}
+              <img src="{{ slide.images.url }}" class="d-block w-100" alt="...">
+              {% endif %}
+            </div>
+            {% endfor %}
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Предыдущий</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Следующий</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <main>
   <div class="works">
     {% for image in nailsite %}
-    <img class="images" src="{{ image.images.url }}" alt="works">
+    <img class="images" src="{{ image.images.url }}" alt="works" data-bs-toggle="modal" data-bs-target="#exampleModal">
     {% endfor %}
 </div>
 </main>
@@ -35,3 +68,7 @@
 {% endif %}
 
 {% endblock %}
+
+
+
+
