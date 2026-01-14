@@ -1,6 +1,7 @@
 from datetime import datetime, timedelta
 from calendar import HTMLCalendar
 from .models import Event
+from django.utils.html import escape
 
 
 class Calendar(HTMLCalendar):
@@ -9,29 +10,60 @@ class Calendar(HTMLCalendar):
         self.month = month
         super(Calendar, self).__init__()
 
-    # formats a day as a td
-    # filter events by day
+    # формирование дня с событиями в td
     def formatday(self, day, events):
-        events_per_day = events.filter(start_time__day=day)
-        d = ''
-        for event in events_per_day:
-            d += (f'<li> {f"0{event.start_time.hour}" if event.start_time.hour < 10 else event.start_time.hour}:'
-                  f'{f"0{event.start_time.minute}" if event.start_time.minute < 10 else event.start_time.minute}'
-                  f' {event.title} </li>')
+        # Фильтруем события для текущего дня и сортируем по времени начала
+        events_per_day = (
+            events
+            .filter(start_time__day=day)
+            .order_by('start_time')  # Сортировка по времени (от раннего к позднему)
+        )
 
+        event_items = []  # Список для HTML‑элементов
+
+        for event in events_per_day:
+            # Проверяем наличие start_time
+            if not event.start_time:
+                continue
+
+            # Форматируем время с ведущими нулями (09:05, а не 9:5)
+            hour = f"{event.start_time.hour:02d}"
+            minute = f"{event.start_time.minute:02d}"
+
+            # Экранируем данные для защиты от XSS
+            first_name = escape(event.user.first_name)
+            name = escape(event.user)
+            title = escape(event.title)
+
+            # Собираем <li> с отступами для читаемости HTML
+            item = (
+                f'<li style="border-bottom: 1px solid #DAA520;">'
+                f'{hour}:{minute} {first_name} {name} {title}'
+                f'</li>'
+            )
+            event_items.append(item)
+
+        # Объединяем элементы без лишних пробелов
+        events_html = ''.join(event_items)
+
+        # Формируем ячейку таблицы
         if day != 0:
-            return f"<td><span class='date'>{day}</span><ul> {d} </ul></td>"
+            return f"""
+            <td>
+                <span class='date'>{day}</span>
+                <ul>{events_html}</ul>
+            </td>
+            """
         return '<td></td>'
 
-    # formats a week as a tr
+    # формирование недели в tr
     def formatweek(self, theweek, events):
         week = ''
         for d, weekday in theweek:
             week += self.formatday(d, events)
         return f'<tr> {week} </tr>'
 
-    # formats a month as a table
-    # filter events by year and month
+    # формирование месяца в таблицу
     def formatmonth(self, withyear=True):
         events = Event.objects.filter(start_time__year=self.year, start_time__month=self.month)
 

@@ -17,7 +17,7 @@
             <input type="submit" class="nav-a btn-a" style="width: 350px; margin: 10px;" value="Оставить отзыв">
         </form>
         {% else %}
-        <a href="{% url 'loginuser' %}">Пожалуйста авторизуйтесь, чтобы оставить отзыв</a>
+        <a class="nav-a" href="{% url 'loginuser' %}" style="margin-bottom: 30px; text-align: center;">Пожалуйста авторизуйтесь, чтобы оставить отзыв</a>
         {% endif %}
     </div>
 </div>
