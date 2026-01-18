@@ -1,5 +1,4 @@
 from django.db import models
-from django.urls import reverse
 from django.contrib.auth.models import User
 
 
@@ -9,7 +8,6 @@ class Event(models.Model):
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
 
-    # @property
-    # def get_html_url(self):
-    #     url = reverse('calendar:event_edit', args=(self.id,))
-    #     return f'<a href="{url}"> {self.title} </a>'
+    class Meta:
+        verbose_name = "запись"
+        verbose_name_plural = "записи"

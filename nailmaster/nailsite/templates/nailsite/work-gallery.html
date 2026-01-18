@@ -11,15 +11,17 @@
       </div>
       <div class="modal-body">
        <div id="carouselExample" class="carousel slide">
-          <div class="carousel-inner">
-            {% for slide in nailsite %}
-            <div class="carousel-item {% if forloop.first %} active {% endif %}">
+         <div class="carousel-inner">
+          {% for slide in nailsite %}
+            <div class="carousel-item {% if forloop.first %}active{% endif %}"
+                 data-index="{{ forloop.counter0 }}">
               {% if slide.images %}
-              <img src="{{ slide.images.url }}" class="d-block w-100" alt="...">
+                <img src="{{ slide.images.url }}" class="d-block w-100" alt="">
               {% endif %}
             </div>
-            {% endfor %}
+          {% endfor %}
           </div>
+
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Предыдущий</span>
@@ -36,10 +38,17 @@
 
 <main>
   <div class="works">
-    {% for image in nailsite %}
-    <img class="images" src="{{ image.images.url }}" alt="works" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    {% endfor %}
-</div>
+  {% for image in nailsite %}
+    <img
+      class="images"
+      src="{{ image.images.url }}"
+      alt="works"
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal"
+      data-index="{{ forloop.counter0 }}">
+  {% endfor %}
+  </div>
+
 </main>
 {% if nailsite %}
 <nav aria-label="Page navigation example">

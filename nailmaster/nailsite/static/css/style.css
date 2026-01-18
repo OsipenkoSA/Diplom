@@ -7,16 +7,13 @@ body{
     max-width: 1600px;
     min-height: 100vh;
     background-color: black;
-    /* background-image:  url(/static/images/background.jpg) no-repeat; */
 }
 header{
     height: 20%;
-    /* border: 1px solid red; */
     margin-bottom: 20px;
 }
 main{
     height: 80%;
-    /* border: 1px solid blue; */
     margin: 50px;
 }
 .banner{
@@ -99,7 +96,6 @@ h2{
 }
 .services{
     display: flexbox;
-    /* margin-left: 50px; */
     justify-content: center;
     align-items: center;
 }
@@ -131,7 +127,6 @@ h2{
     width: 400px;
     height: auto;
     float: right;
-    /* margin: 20px; */
 }
 
 /* Логин */
@@ -196,12 +191,10 @@ h2{
     height: 300px;
 }
 .reviews p{
-    /* color: white; */
     font-size: 18px;
     padding-bottom: 10px;
 }
 .reviews h3{
-    /* color: whitesmoke; */
     font-size: 20px;
     padding-bottom: 5px;
 }
@@ -305,4 +298,58 @@ a {
 .bottom{
   border-bottom: 1px solid #DAA520;
   margin: 10px;
+}
+
+.login-user-event{
+  background-color: greenyellow;
+}
+
+/* ================================================================ */
+
+.calendar {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.calendar td {
+    vertical-align: top;
+    padding: 6px;
+}
+
+.calendar .date {
+    font-weight: bold;
+}
+
+.calendar li {
+    border-bottom: 1px solid #DAA520;
+    padding: 4px;
+}
+
+.calendar li.mine {
+    color: greenyellow;
+}
+
+.calendar td.empty {
+    background: black;
+}
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.calendar-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.calendar td.busy-day {
+    background-color: black;
+    border: 2px solid red;
+}
+
+.calendar td.busy-day .date {
+    color: red;
+    font-weight: bold;
 }

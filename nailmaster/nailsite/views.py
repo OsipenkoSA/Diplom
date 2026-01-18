@@ -59,7 +59,6 @@ def review_user(request):
         review = form.save(commit=False)
         review.owner = request.user
         review.save()
-        messages.success(request, "Вы оставили сой отзыв! Спасибо!")
         return redirect('review')
 
     context = {

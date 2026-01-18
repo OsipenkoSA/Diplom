@@ -1,12 +1,8 @@
 from datetime import datetime, timedelta, date
-from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse, HttpResponseRedirect
 from django.views import generic
-from django.urls import reverse
 from django.utils.safestring import mark_safe
 import calendar
 import locale
-
 from .models import *
 from .utils import Calendar
 
@@ -18,10 +14,11 @@ class CalendarView(generic.ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        d = get_date(self.request.GET.get('month', None))
-        cal = Calendar(d.year, d.month)
-        html_cal = cal.formatmonth(withyear=True)
-        context['calendar'] = mark_safe(html_cal)
+        d = get_date(self.request.GET.get('month'))
+        calendar = Calendar(d.year, d.month)
+        context['weeks'] = calendar.get_weeks()
+        context['month_name'] = d.strftime('%B')
+        context['year'] = d.year
         context['prev_month'] = prev_month(d)
         context['next_month'] = next_month(d)
         return context
@@ -47,13 +44,3 @@ def next_month(d):
     next_month = last + timedelta(days=1)
     month = 'month=' + str(next_month.year) + '-' + str(next_month.month)
     return month
-
-
-# def event(request, pk):
-#     instance = Event.objects.get(id=pk)
-#     if pk:
-#         instance = get_object_or_404(Event, pk=id)
-#     else:
-#         instance = Event()
-#
-#     return render(request, 'work_calendar/event.html')

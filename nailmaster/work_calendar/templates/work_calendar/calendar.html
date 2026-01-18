@@ -7,12 +7,56 @@
 <h1 class="title">Календарь записей</h1>
 <hr>
 
-<div class="clearfix">
+<div class="calendar-header">
 	<a class="btn btn-info left" href="{% url 'calendar' %}?{{ prev_month }}">Предыдущий месяц</a>
+	<h2 class="calendar-title">
+    {{ month_name|capfirst }} {{ year }}
+	</h2>
 	<a class="btn btn-info right" href="{% url 'calendar' %}?{{ next_month }}">Следующий месяц</a>
 </div>
 
-{{ calendar }}
+<table class="calendar">
+    <thead>
+        <tr>
+            <th>Пн</th><th>Вт</th><th>Ср</th>
+            <th>Чт</th><th>Пт</th><th>Сб</th><th>Вс</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for week in weeks %}
+        <tr>
+			{% for day in week %}
+			{% if day %}
+    <td class="
+        {% if day.events|length >= 5 %}
+            busy-day
+        {% endif %}">
+        <span class="date">{{ day.day }}</span>
+        <ul>
+            {% for event in day.events %}
+                <li class="{% if event.user == user %}mine{% endif %}">
+                    {{ event.start_time|date:"H:i" }}
+                    {{ event.user.first_name }}
+                    {% if user.is_superuser %}
+                        {{ event.user }}
+                    {% endif %}
+                    {{ event.title }}
+                </li>
+            {% empty %}
+                <li class="empty"></li>
+            {% endfor %}
+        </ul>
+    </td>
+{% else %}
+    <td class="empty"></td>
+{% endif %}
+
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 
 {% endblock %}
 
